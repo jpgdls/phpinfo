@@ -36,3 +36,20 @@ spec:
             path: index.php
         name: phpinfo-cm
       name: phpinfo-volume
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: phpinfo-svc
+spec:
+  ports:
+    -
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: phpinfo
+    env: production
+    tier: frontend
+  type: ClusterIP
+  type:
