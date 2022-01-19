@@ -22,5 +22,12 @@ spec:
       workingDir: /src/
   volumes:
     -
-      configMap:
-      name:
+      configMap: 
+        defaultMode: 0400
+        items: 
+          -
+            key: index.php
+            mode: 0400
+            path: index.php
+        name: phpinfo-cm
+      name: phpinfo-volume
