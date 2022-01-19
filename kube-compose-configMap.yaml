@@ -5,7 +5,8 @@ metadata:
 spec:
   containers:
     - 
-      args: '-f src/index.php -S 0.0.0.0:8080'
+      args: 
+        - -f src/index.php -S 0.0.0.0:8080
       command: php
       image: jpgdls/redhat-php:latest
       name: phpinfo-container
